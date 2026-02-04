@@ -20,7 +20,11 @@
     } else if (isset($_GET['login']) && !$isLoggedIn) {
 
         include("./client/Login.php");
-    } else {
+    } else if (isset($_GET['ask'])) {
+
+        include("./client/ask.php");
+
+
         // Default page content
     }
     ?>
