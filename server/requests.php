@@ -14,7 +14,7 @@ if (isset($_POST['signup'])) {
     $result = $user->execute();
     if ($result) {
         $_SESSION['user'] = ['username' => $username, 'email' => $email];
-        header("location: /disscuss");
+        header("location:/discusswebsite");
     } else {
         echo "user not found";
     }
