@@ -14,8 +14,31 @@ if (isset($_POST['signup'])) {
     $result = $user->execute();
     if ($result) {
         $_SESSION['user'] = ['username' => $username, 'email' => $email];
-        header("location:/discusswebsite");
+        header("location: /discusswebsite");
     } else {
         echo "user not found";
     }
+} else if ((isset($_POST['login']))) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $username = "";
+    $query = "select * from users where email = '$email' and password='$password'";
+    $result = $conn->query($query);
+    if ($result->num_rows == 1) {
+
+        foreach ($result as $row) {
+
+            $username = $row['username'];
+        }
+        $_SESSION['user'] = ['username' => $username, 'email' => $email];
+
+        header("location: /discusswebsite");
+    } else {
+        echo "new user not register";
+    }
+} else if ((isset($_GET['logout']))) {
+
+    session_unset();
+
+    header("location: /discusswebsite");
 }
