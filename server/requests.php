@@ -12,9 +12,10 @@ if (isset($_POST['signup'])) {
     values(NULL, '$username','$email','$password','$address')
     ");
     $result = $user->execute();
+    $user->insert_id;
     if ($result) {
-        $_SESSION['user'] = ['username' => $username, 'email' => $email];
-        header("location: /discusswebsite");
+        $_SESSION['user'] = ['username' => $username, 'email' => $email, 'user_id' => $user->insert_id];
+        // header("location: /discusswebsite");
     } else {
         echo "user not found";
     }
@@ -22,6 +23,7 @@ if (isset($_POST['signup'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
     $username = "";
+    $user_id = 0;
     $query = "select * from users where email = '$email' and password='$password'";
     $result = $conn->query($query);
     if ($result->num_rows == 1) {
@@ -29,8 +31,9 @@ if (isset($_POST['signup'])) {
         foreach ($result as $row) {
 
             $username = $row['username'];
+            $user_id = $row['id'];
         }
-        $_SESSION['user'] = ['username' => $username, 'email' => $email];
+        $_SESSION['user'] = ['username' => $username, 'email' => $email, 'user_id' => $user_id];
 
         header("location: /discusswebsite");
     } else {
@@ -41,4 +44,6 @@ if (isset($_POST['signup'])) {
     session_unset();
 
     header("location: /discusswebsite");
+} else if (isset($_POST['ask'])) {
+    print_r($_POST);
 }
