@@ -13,11 +13,9 @@
         </div>
         <div class="col-6 offset-sm-3 margin-bottom-15">
             <label for="category" class="form-label">Category</label>
-            <select name="category" class="form-control" id=" category">
-                <option value="">Mobile</option>
-                <option value="">General</option>
-                <option value="">Coding</option>
-            </select>
+            <?php
+            include("Category.php");
+            ?>
         </div>
 
         <div class="col-6 offset-sm-3 margin-bottom-15">
