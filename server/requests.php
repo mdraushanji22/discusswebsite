@@ -15,7 +15,7 @@ if (isset($_POST['signup'])) {
     $user->insert_id;
     if ($result) {
         $_SESSION['user'] = ['username' => $username, 'email' => $email, 'user_id' => $user->insert_id];
-        // header("location: /discusswebsite");
+        header("location: /discusswebsite");
     } else {
         echo "user not found";
     }
@@ -45,5 +45,19 @@ if (isset($_POST['signup'])) {
 
     header("location: /discusswebsite");
 } else if (isset($_POST['ask'])) {
-    print_r($_POST);
+
+    $title = $_POST['title'];
+    $description = $_POST['description'];
+    $category_id = $_POST['category'];
+    $user_id = $_SESSION['user']['user_id'];
+
+    $question = $conn->prepare("INSERT INTO questions (title, description, category_id, user_id) VALUES (?, ?, ?, ?)");
+    $question->bind_param("ssii", $title, $description, $category_id, $user_id);
+
+    if ($question->execute()) {
+        header("Location: /discusswebsite");
+        exit;
+    } else {
+        echo "Question could not be added";
+    }
 }
