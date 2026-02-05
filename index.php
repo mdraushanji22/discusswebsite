@@ -23,9 +23,8 @@
     } else if (isset($_GET['ask'])) {
 
         include("./client/ask.php");
-
-
-        // Default page content
+    } else {
+        include("./client/questions.php");
     }
     ?>
 
