@@ -8,10 +8,8 @@
 
     foreach ($result as $row) {
         $title = $row['title'];
-
         echo "<div class ='row question-list'>
-        <h4>$title</h4>
-        </div>";
+        <h4>$title</h4></div>";
     }
     ?>
 
