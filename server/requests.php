@@ -77,4 +77,12 @@ if (isset($_POST['signup'])) {
     } else {
         echo "Answer could not be added";
     }
+} else if (isset($_GET['delete'])) {
+    $qid = $_GET['delete'];
+    $query = $conn->prepare("delete from questions where id=$qid");
+    $result = $query->execute();
+    if ($result) {
+
+        header("Location: /discusswebsite");
+    }
 }
