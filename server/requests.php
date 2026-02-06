@@ -60,4 +60,21 @@ if (isset($_POST['signup'])) {
     } else {
         echo "Question could not be added";
     }
+} else if (isset($_POST['answer'])) {
+    $answer = $_POST['answer'];
+    $question_id = $_POST['question_id'];
+    $user_id = $_SESSION['user']['user_id'];
+
+    // Correct query (only 3 placeholders)
+    $answers = $conn->prepare("INSERT INTO answers (answer, question_id, user_id) VALUES (?, ?, ?)");
+
+    // Correct binding (1 string + 2 integers)
+    $answers->bind_param("sii", $answer, $question_id, $user_id);
+
+    if ($answers->execute()) {
+        header("Location: /discusswebsite?q-id=$question_id");
+        exit;
+    } else {
+        echo "Answer could not be added";
+    }
 }
