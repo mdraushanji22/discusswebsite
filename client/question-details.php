@@ -20,8 +20,12 @@
             </form>
         </div>
         <div class="col-4">
-            <h1 class="heading">Related Question</h1>
             <?php
+            $categoryQuery = "select name from category where id=$cid";
+            $categoryResult = $conn->query($categoryQuery);
+            $categoryRow = $categoryResult->fetch_assoc();
+            echo "<h1>" . ucfirst($categoryRow['name']) . "</h1>";
+
             $query = "select * from questions where category_id=$cid and id!=$qid";
             $result = $conn->query($query);
             foreach ($result as $row) {
