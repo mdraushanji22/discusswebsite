@@ -5,6 +5,7 @@
             <h1 class="heading">Questions</h1>
             <?php
             include("./common/db.php");
+            $uid = isset($_GET["u-id"]) ? $_GET["u-id"] : null;
             if (isset($_GET["c-id"])) {
                 $query = "select * from questions where category_id=$cid";
             } else if (isset($_GET["u-id"])) {
@@ -20,8 +21,6 @@
             foreach ($result as $row) {
                 $title = $row['title'];
                 $id = $row['id'];
-                $uid = $row['user_id'];
-
                 echo "<div class='row question-list'>
     <h4 class='my-question'><a href='?q-id=$id'>$title</a>";
                 echo $uid ? "<a href='./server/requests.php?delete=$id'>Delete</a>" : NULL;

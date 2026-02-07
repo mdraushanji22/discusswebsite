@@ -60,7 +60,8 @@ if (isset($_POST['signup'])) {
     } else {
         echo "Question could not be added";
     }
-} else if (isset($_POST['answer'])) {
+} else if (isset($_POST['answer'])) {;
+
     $answer = $_POST['answer'];
     $question_id = $_POST['question_id'];
     $user_id = $_SESSION['user']['user_id'];
