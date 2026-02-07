@@ -123,11 +123,8 @@ discusswebsite/
 ```
 
 ## Screenshots
+<img width="1895" height="995" alt="Screenshot 2026-02-07 194353" src="https://github.com/user-attachments/assets/f7effa8f-5909-47d5-8b83-fed913bd5114" />
 
-<!-- Add your screenshots here -->
-![Screenshot 1](screenshots/screenshot1.png)
-![Screenshot 2](screenshots/screenshot2.png)
-![Screenshot 3](screenshots/screenshot3.png)
 
 *(Note: Create a 'screenshots' folder in your project root and add your actual screenshots)*
 
