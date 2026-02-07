@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
+    <div class="container">
 
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="./">
             <img src="./public/logo.png" alt="">
         </a>
 
@@ -15,7 +15,7 @@
                 <?php if (isset($_SESSION['user']) && isset($_SESSION['user']['username'])) { ?>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="./server/requests.php?logout=true">Logout</a>
+                        <a class="nav-link" href="./server/requests.php?logout=true">Logout(<?php echo $_SESSION['user']['username'] ?>)</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="?ask=true">Ask A Question</a>
@@ -37,17 +37,13 @@
                 <?php } ?>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Category</a>
-                </li>
-
-                <li class="nav-item">
                     <a class="nav-link" href="?latest=true">Latest Questions</a>
                 </li>
             </ul>
-            <form class="d-flex" action="">
-                <input class="form-control me-2" name="search" type="search" placeholder="Search questions">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
         </div>
+        <form class="d-flex" action="">
+            <input class="form-control me-2" name="search" type="search" placeholder="Search questions">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
     </div>
 </nav>

@@ -17,7 +17,7 @@ if (isset($_POST['signup'])) {
         $_SESSION['user'] = ['username' => $username, 'email' => $email, 'user_id' => $user->insert_id];
         header("location: /discusswebsite");
     } else {
-        echo "user not found";
+        echo "user already exist";
     }
 } else if ((isset($_POST['login']))) {
     $email = $_POST['email'];
@@ -37,7 +37,7 @@ if (isset($_POST['signup'])) {
 
         header("location: /discusswebsite");
     } else {
-        echo "new user not register";
+        echo "Email or password invalid";
     }
 } else if ((isset($_GET['logout']))) {
 
