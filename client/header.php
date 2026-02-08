@@ -18,7 +18,7 @@
                         <a class="nav-link" href="./server/requests.php?logout=true">Logout(<?php echo $_SESSION['user']['username'] ?>)</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="?ask=true">Ask A Question</a>
+                        <a class="nav-link" href="?ask=true">Ask Question</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="?u-id=<?php echo $_SESSION['user']['user_id'] ?>">My Question</a>
