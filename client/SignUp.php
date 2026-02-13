@@ -1,5 +1,5 @@
 <div class="container">
-    <h1 class="heading">SignUp</h1>
+    <h1 class="heading">Please SignUp</h1>
     <form action="./server/requests.php" method="post">
         <div class="col-6 offset-sm-3 margin-bottom-15">
             <label for="username" class="form-label">User Name</label>
