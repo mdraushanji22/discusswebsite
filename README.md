@@ -161,3 +161,6 @@ If you encounter any issues:
 2. Check that the database is properly configured
 3. Verify file permissions
 4. Check PHP error logs for specific error messages
+
+5. ## Contact:
+   mdraushanji22@gmail.com
