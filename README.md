@@ -1,4 +1,4 @@
-# Discuss Website - Question & Answer Forum
+# Discuss Website using PHP MySQL- Question & Answer Forum
 
 A simple Q&A forum built with PHP, MySQL, and Bootstrap. Users can register, log in, ask questions, answer questions, and browse content by categories.
 
