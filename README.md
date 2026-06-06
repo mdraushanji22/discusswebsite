@@ -155,6 +155,7 @@ discusswebsite/
 - Add rich text editor for questions and answers
 
 ## Troubleshooting
+## you can ask any questions and answers 
 
 If you encounter any issues:
 1. Ensure XAMPP services (Apache and MySQL) are running
